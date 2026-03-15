@@ -43,8 +43,8 @@ struct HomeView: View {
                                 }
                                 .buttonStyle(.plain)
 
-                                Button(action: { showTrickLog = true }) {
-                                    TrickLogCardCompact()
+                                Button(action: { showAllSpots = true }) {
+                                    AllspotsCardCompact(spotsService: spotsService)
                                 }
                                 .buttonStyle(.plain)
                             }
@@ -276,13 +276,47 @@ struct TricksSummaryCardCompact: View {
 }
 
 // MARK: - Compact Trick Log Card
-struct TrickLogCardCompact: View {
-    var recentCount: Int { TrickLogService.shared.entries.count }
+//struct TrickLogCardCompact: View {
+//    var recentCount: Int { TrickLogService.shared.entries.count }
+//
+//    var body: some View {
+//        VStack(alignment: .leading, spacing: 10) {
+//            HStack {
+//                Image(systemName: "list.clipboard.fill")
+//                    .font(.system(size: 16))
+//                    .foregroundColor(Color(hex: "#4CAF50"))
+//                Spacer()
+//                Image(systemName: "chevron.right")
+//                    .font(.system(size: 11))
+//                    .foregroundColor(Color.white.opacity(0.2))
+//            }
+//            Text("\(recentCount)")
+//                .font(.system(size: 30, weight: .black, design: .rounded))
+//                .foregroundColor(.white)
+//            Text("Log\nEntries")
+//                .font(.system(size: 13))
+//                .foregroundColor(Color.white.opacity(0.45))
+//                .lineSpacing(2)
+//        }
+//        .padding(16)
+//        .frame(maxWidth: .infinity, alignment: .leading)
+//        .background(
+//            RoundedRectangle(cornerRadius: 18)
+//                .fill(Color.white.opacity(0.06))
+//                .overlay(RoundedRectangle(cornerRadius: 18).stroke(Color(hex: "#4CAF50").opacity(0.15), lineWidth: 1))
+//        )
+//    }
+//}
+
+//allspots
+struct AllspotsCardCompact: View {
+    @ObservedObject var spotsService: SpotsService
+    var recentCount: Int { spotsService.nearbySpots.count }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Image(systemName: "list.clipboard.fill")
+                Image(systemName: "map.fill")
                     .font(.system(size: 16))
                     .foregroundColor(Color(hex: "#4CAF50"))
                 Spacer()
@@ -293,7 +327,7 @@ struct TrickLogCardCompact: View {
             Text("\(recentCount)")
                 .font(.system(size: 30, weight: .black, design: .rounded))
                 .foregroundColor(.white)
-            Text("Log\nEntries")
+            Text("All Spots\n Nearby")
                 .font(.system(size: 13))
                 .foregroundColor(Color.white.opacity(0.45))
                 .lineSpacing(2)
@@ -333,18 +367,20 @@ struct NearbySection: View {
                 Spacer()
 
                 if spotsService.isLoading {
-                    ProgressView().scaleEffect(0.8).tint(Color(hex: "#FFD700"))
+                    Text("Loading spots...")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundColor(.white)
                 } else {
-                    Button(action: { onMapTap?() }) {
-                        HStack(spacing: 4) {
-                            Image(systemName: "map.fill")
-                                .font(.system(size: 11))
-                                .foregroundColor(Color(hex: "#FFD700"))
-                            Text("Map View")
-                                .font(.system(size: 13, weight: .semibold))
-                                .foregroundColor(Color(hex: "#FFD700"))
-                        }
-                    }
+//                    Button(action: { onMapTap?() }) {
+//                        HStack(spacing: 4) {
+//                            Image(systemName: "map.fill")
+//                                .font(.system(size: 11))
+//                                .foregroundColor(Color(hex: "#FFD700"))
+//                            Text("Map View")
+//                                .font(.system(size: 13, weight: .semibold))
+//                                .foregroundColor(Color(hex: "#FFD700"))
+//                        }
+//                    }
                 }
             }
             .padding(.horizontal, 20)

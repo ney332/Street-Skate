@@ -95,7 +95,7 @@ struct AllSpotsMapView: View {
 
                 if spotsService.isLoading {
                     HStack(spacing: 8) {
-                        ProgressView().scaleEffect(0.8).tint(Color(hex: "#FFD700"))
+//                        ProgressView().scaleEffect(0.8).tint(Color(hex: "#FFD700"))
                         Text("Searching for spots...")
                             .font(.system(size: 13))
                             .foregroundColor(.white)
