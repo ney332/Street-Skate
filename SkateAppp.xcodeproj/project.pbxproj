@@ -6,14 +6,50 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1CDEBECC2F648528000C2DE1 /* SkateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDEBEB92F648528000C2DE1 /* SkateApp.swift */; };
+		1CDEBECE2F648528000C2DE1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDEBEB52F648528000C2DE1 /* AppState.swift */; };
+		1CDEBFFD2F648EB3000C2DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CDEBFFC2F648EB3000C2DE1 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		1CDEBE242F647C03000C2DE1 /* SkateAppp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkateAppp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDEBEB52F648528000C2DE1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		1CDEBEB82F648528000C2DE1 /* SkateApDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkateApDebug.entitlements; sourceTree = "<group>"; };
+		1CDEBEB92F648528000C2DE1 /* SkateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateApp.swift; sourceTree = "<group>"; };
+		1CDEBFFB2F648EB3000C2DE1 /* SkateAppp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkateAppp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDEBFFC2F648EB3000C2DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1CDEC0342F6490E4000C2DE1 /* SkateAppp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkateAppp-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		1CDEBE262F647C03000C2DE1 /* SkateAppp */ = {
+		1CDEBE9E2F648528000C2DE1 /* Models */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SkateAppp;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1CDEBE9F2F648528000C2DE1 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1CDEBEA12F648528000C2DE1 /* ViewModels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1CDEBEB42F648528000C2DE1 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1CDEBEDB2F64888A000C2DE1 /* Components */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1CDEBEDD2F6488A4000C2DE1 /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,17 +68,27 @@
 		1CDEBE1B2F647C03000C2DE1 = {
 			isa = PBXGroup;
 			children = (
-				1CDEBE262F647C03000C2DE1 /* SkateAppp */,
-				1CDEBE252F647C03000C2DE1 /* Products */,
+				1CDEBEDD2F6488A4000C2DE1 /* Resources */,
+				1CDEBEDB2F64888A000C2DE1 /* Components */,
+				1CDEBE9E2F648528000C2DE1 /* Models */,
+				1CDEBE9F2F648528000C2DE1 /* Services */,
+				1CDEBEA12F648528000C2DE1 /* ViewModels */,
+				1CDEBEB42F648528000C2DE1 /* Views */,
+				1CDEBEB52F648528000C2DE1 /* AppState.swift */,
+				1CDEBEB92F648528000C2DE1 /* SkateApp.swift */,
+				1CDEC03E2F64AFC5000C2DE1 /* Utilities */,
+				1CDEBFFC2F648EB3000C2DE1 /* Assets.xcassets */,
+				1CDEC0342F6490E4000C2DE1 /* SkateAppp-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
-		1CDEBE252F647C03000C2DE1 /* Products */ = {
+		1CDEC03E2F64AFC5000C2DE1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1CDEBE242F647C03000C2DE1 /* SkateAppp.app */,
+				1CDEBEB82F648528000C2DE1 /* SkateApDebug.entitlements */,
+				1CDEBFFB2F648EB3000C2DE1 /* SkateAppp.app */,
 			);
-			name = Products;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -61,13 +107,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				1CDEBE262F647C03000C2DE1 /* SkateAppp */,
+				1CDEBE9E2F648528000C2DE1 /* Models */,
+				1CDEBE9F2F648528000C2DE1 /* Services */,
+				1CDEBEA12F648528000C2DE1 /* ViewModels */,
+				1CDEBEB42F648528000C2DE1 /* Views */,
+				1CDEBEDB2F64888A000C2DE1 /* Components */,
+				1CDEBEDD2F6488A4000C2DE1 /* Resources */,
 			);
 			name = SkateAppp;
 			packageProductDependencies = (
 			);
 			productName = SkateAppp;
-			productReference = 1CDEBE242F647C03000C2DE1 /* SkateAppp.app */;
+			productReference = 1CDEBFFB2F648EB3000C2DE1 /* SkateAppp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -81,7 +132,7 @@
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					1CDEBE232F647C03000C2DE1 = {
-						CreatedOnToolsVersion = 26.2;
+						CreatedOnToolsVersion = 26.1;
 					};
 				};
 			};
@@ -95,7 +146,7 @@
 			mainGroup = 1CDEBE1B2F647C03000C2DE1;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 1CDEBE252F647C03000C2DE1 /* Products */;
+			productRefGroup = 1CDEBE1B2F647C03000C2DE1;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -109,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CDEBFFD2F648EB3000C2DE1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +171,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CDEBECC2F648528000C2DE1 /* SkateApp.swift in Sources */,
+				1CDEBECE2F648528000C2DE1 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,20 +308,27 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SkateAppp-Info.plist";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "SkateFlow reads your health data to display activity metrics alongside your skating sessions.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "SkateFlow saves your skating workouts to Apple Health so you can track your fitness progress.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SkateFlow uses your location to track your skate session route even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SkateFlow uses your location to track your skate session route and find nearby skate spots.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "SkateFlow uses motion data to count your pushes and detect skating activity.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "\"\"";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Lorran.SkateAppp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,7 +342,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 26.1;
 			};
 			name = Debug;
 		};
@@ -298,20 +359,27 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SkateAppp-Info.plist";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "SkateFlow reads your health data to display activity metrics alongside your skating sessions.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "SkateFlow saves your skating workouts to Apple Health so you can track your fitness progress.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SkateFlow uses your location to track your skate session route even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SkateFlow uses your location to track your skate session route and find nearby skate spots.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "SkateFlow uses motion data to count your pushes and detect skating activity.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "\"\"";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Lorran.SkateAppp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -325,7 +393,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 26.1;
 			};
 			name = Release;
 		};

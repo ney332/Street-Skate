@@ -120,7 +120,7 @@ struct TrickLogView: View {
                     }
                 }
             }
-            .navigationTitle("Trick Log")
+            .navigationTitle("Learned Tricks")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.black, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)

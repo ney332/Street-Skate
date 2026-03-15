@@ -38,7 +38,7 @@ struct WelcomeView: View {
                 .padding(.bottom, 40)
                 
                 VStack(spacing: 16) {
-                    Text("Welcome to\nSkateFlow")
+                    Text("Welcome to\nStreet skate")
                         .font(.system(size: 40, weight: .black, design: .rounded))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
@@ -68,7 +68,7 @@ struct WelcomeView: View {
                     }
                 }) {
                     HStack(spacing: 12) {
-                        Text("Enter App")
+                        Text("Start skating")
                             .font(.system(size: 18, weight: .bold, design: .rounded))
                         Image(systemName: "arrow.right")
                             .font(.system(size: 16, weight: .bold))

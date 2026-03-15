@@ -4,8 +4,6 @@
 //
 //  Created by Lorran on 13/03/26.
 //
-
-
 import UserNotifications
 import Foundation
 
@@ -37,10 +35,11 @@ class NotificationService {
         ]
 
         let content = UNMutableNotificationContent()
-        content.title = "SkateFlow"
+        content.title = "Street Skate"
         content.body = messages.randomElement() ?? messages[0]
         content.sound = .default
         content.badge = 1
+        content.launchImageName = "icon"
 
         var components = DateComponents()
         components.hour = hour
