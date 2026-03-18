@@ -42,11 +42,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1CDEBEDB2F64888A000C2DE1 /* Components */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Components;
-			sourceTree = "<group>";
-		};
 		1CDEBEDD2F6488A4000C2DE1 /* Resources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Resources;
@@ -69,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				1CDEBEDD2F6488A4000C2DE1 /* Resources */,
-				1CDEBEDB2F64888A000C2DE1 /* Components */,
 				1CDEBE9E2F648528000C2DE1 /* Models */,
 				1CDEBE9F2F648528000C2DE1 /* Services */,
 				1CDEBEA12F648528000C2DE1 /* ViewModels */,
@@ -111,7 +105,6 @@
 				1CDEBE9F2F648528000C2DE1 /* Services */,
 				1CDEBEA12F648528000C2DE1 /* ViewModels */,
 				1CDEBEB42F648528000C2DE1 /* Views */,
-				1CDEBEDB2F64888A000C2DE1 /* Components */,
 				1CDEBEDD2F6488A4000C2DE1 /* Resources */,
 			);
 			name = SkateAppp;
@@ -309,6 +302,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SkateAppp-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "SkateFlow reads your health data to display activity metrics alongside your skating sessions.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "SkateFlow saves your skating workouts to Apple Health so you can track your fitness progress.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SkateFlow uses your location to track your skate session route even when the app is in the background.";
@@ -360,6 +354,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SkateAppp-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "SkateFlow reads your health data to display activity metrics alongside your skating sessions.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "SkateFlow saves your skating workouts to Apple Health so you can track your fitness progress.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SkateFlow uses your location to track your skate session route even when the app is in the background.";

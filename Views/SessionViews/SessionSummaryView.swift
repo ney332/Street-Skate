@@ -108,7 +108,7 @@ struct SessionSummaryView: View {
                         )
                         SummaryMetric(
                             value: "\(session.pushCount)", label: "Remadas",
-                            icon: "arrow.forward.circle", color: Color(hex: "#9C27B0"), delay: 0.8
+                            icon: "arrow.forward.circle", color: Color(hex: "#9C27B0"), delay: 2.0
                         )
                     }
                     .padding(.horizontal, 24)

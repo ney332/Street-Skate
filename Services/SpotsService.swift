@@ -28,8 +28,8 @@ class SpotsService: ObservableObject {
             let queries = ["skate park", "skateboard park", "skatepark", "praça skate", "pista skate"]
             let region = MKCoordinateRegion(
                 center: location.coordinate,
-                latitudinalMeters: 8000,
-                longitudinalMeters: 8000
+                latitudinalMeters: 20000,
+                longitudinalMeters: 20000
             )
             
             for query in queries {
@@ -53,7 +53,7 @@ class SpotsService: ObservableObject {
                             return spotLocation.distance(from: existingLoc) < 50
                         }
                         
-                        if !isDuplicate && distance < 10000 {
+                        if !isDuplicate && distance < 20000 {
                             let spot = SkateSpot(
                                 name: item.name ?? "Skate Spot",
                                 type: classifySpot(name: item.name ?? "", category: item.pointOfInterestCategory),
@@ -70,8 +70,8 @@ class SpotsService: ObservableObject {
                 }
             }
             
-            // Sort by distance, take top 8
-            let sorted = results.sorted { $0.distanceMeters < $1.distanceMeters }.prefix(8)
+            // Sort by distance, take top 10
+            let sorted = results.sorted { $0.distanceMeters < $1.distanceMeters }.prefix(10)
             
             if !Task.isCancelled {
                 await MainActor.run {

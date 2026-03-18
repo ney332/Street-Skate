@@ -98,18 +98,18 @@ struct StartTrainingCard: View {
             ZStack {
                 // Background gradient
                 LinearGradient(
-                    colors: [Color(hex: "#1a1a2e"), Color(hex: "#16213e"), Color(hex: "#0f3460")],
+                    colors: [Color(hex: "#1c1c1e")],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
                 .cornerRadius(24)
                 
                 // Glow dot
-                Circle()
-                    .fill(Color(hex: "#FFD700").opacity(0.2))
-                    .frame(width: 120, height: 120)
-                    .blur(radius: 30)
-                    .offset(x: 80, y: -30)
+//                Circle()
+//                    .fill(Color(hex: "#FFD700").opacity(0.2))
+//                    .frame(width: 120, height: 120)
+//                    .blur(radius: 30)
+//                    .offset(x: 80, y: -30)
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 12) {

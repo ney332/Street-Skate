@@ -104,7 +104,7 @@ struct SettingsView: View {
                             showProgress = true
                         }
                         Divider().background(Color.white.opacity(0.08)).padding(.leading, 54)
-                        NavigationRowSettings(icon: "info.circle.fill", iconColor: Color(hex: "#2196F3"), title: "About SkateFlow") {
+                        NavigationRowSettings(icon: "info.circle.fill", iconColor: Color(hex: "#2196F3"), title: "About") {
                             showAbout = true
                         }
                         Divider().background(Color.white.opacity(0.08)).padding(.leading, 54)
@@ -332,14 +332,14 @@ struct AboutView: View {
                         RoundedRectangle(cornerRadius: 24)
                             .fill(LinearGradient(colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")], startPoint: .topLeading, endPoint: .bottomTrailing))
                             .frame(width: 80, height: 80)
-                        Text("SK8")
+                        Image("AppIcon")
                             .font(.system(size: 26, weight: .black, design: .rounded))
                             .foregroundColor(.black)
                     }
                     .padding(.top, 20)
                     
                     VStack(spacing: 8) {
-                        Text("SkateFlow")
+                        Text("Street Skate")
                             .font(.system(size: 28, weight: .black, design: .rounded))
                             .foregroundColor(.white)
                         Text("Version 1.0.0")
@@ -347,7 +347,7 @@ struct AboutView: View {
                             .foregroundColor(Color.white.opacity(0.4))
                     }
                     
-                    Text("SkateFlow is your ultimate companion for tracking skate sessions, discovering spots, and progressing your trick skills. Built for skaters, by skaters.")
+                    Text("Street Skate is your ultimate companion for tracking skate sessions, discovering spots, and progressing your trick skills. Built for skaters, by skaters.")
                         .font(.system(size: 16))
                         .foregroundColor(Color.white.opacity(0.6))
                         .multilineTextAlignment(.center)

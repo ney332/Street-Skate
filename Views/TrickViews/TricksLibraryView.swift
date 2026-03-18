@@ -91,8 +91,8 @@ struct TricksLibraryView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: { showTrickLog = true }) {
-                        Image(systemName: "list.clipboard")
-                            .foregroundColor(Color(hex: "#FFD700"))
+//                        Image(systemName: "list.clipboard")
+//                            /*.foregroundColor(Color(hex: "#FFD700")*/)
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
