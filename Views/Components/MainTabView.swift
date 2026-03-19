@@ -33,7 +33,7 @@ struct MainTabView: View {
         .toolbarBackground(.visible, for: .tabBar)
         .toolbarBackground(.ultraThinMaterial, for: .tabBar)
         // Optional: tint the selected item to your gold color
-        .tint(Color(hex: "#FFD700"))
+        .tint(Color(hex: "#87FF00"))
     }
 }
 

@@ -115,11 +115,11 @@ struct StartTrainingCard: View {
                     VStack(alignment: .leading, spacing: 12) {
                         ZStack {
                             Circle()
-                                .fill(Color(hex: "#FFD700").opacity(0.15))
+                                .fill(Color(.white).opacity(0.1))
                                 .frame(width: 60, height: 60)
                             Image(systemName: "play.fill")
                                 .font(.system(size: 22))
-                                .foregroundColor(Color(hex: "#FFD700"))
+                                .foregroundColor(Color(hex: "#87FF00"))
                         }
                         
                         VStack(alignment: .leading, spacing: 4) {

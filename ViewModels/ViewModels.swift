@@ -47,7 +47,6 @@ class SessionViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var lastLocation: CLLocation?
     private var pausedTime: TimeInterval = 0
     private var sessionStartDate: Date = Date()
-    private var adaptiveMinStepMeters: Double = 0.5
     
     var formattedDuration: String {
         let total = Int(duration)
@@ -128,58 +127,17 @@ class SessionViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard isRunning, let location = locations.last else { return }
-        
-        let hAcc = location.horizontalAccuracy
-        let currentCourse = location.course // -1 if invalid
-        let currentCourseAcc = location.courseAccuracy // may be large if uncertain
-        
-        // Compute instantaneous speed (m/s) using location speed if available; otherwise derive from last point
-        var speed: CLLocationSpeed = location.speed // may be negative if invalid
-        var headingChange: CLLocationDirection = 0
-        if let last = lastLocation {
-            let dt = location.timestamp.timeIntervalSince(last.timestamp)
-            if speed < 0, dt > 0 {
-                speed = location.distance(from: last) / dt
-            }
-            // Estimate heading change using course when available, else bearing between points
-            let lastCourse = last.course
-            if currentCourse >= 0, lastCourse >= 0 {
-                headingChange = fabs(currentCourse - lastCourse)
-            } else {
-                // Bearing-based estimate
-                let dLon = location.coordinate.longitude - last.coordinate.longitude
-                let y = sin(dLon * .pi / 180.0) * cos(location.coordinate.latitude * .pi / 180.0)
-                let x = cos(last.coordinate.latitude * .pi / 180.0) * sin(location.coordinate.latitude * .pi / 180.0) - sin(last.coordinate.latitude * .pi / 180.0) * cos(location.coordinate.latitude * .pi / 180.0) * cos(dLon * .pi / 180.0)
-                let bearing = atan2(y, x) * 180.0 / .pi
-                let lastBearing: Double = 0 // not tracked; fall back to small change
-                headingChange = fabs(bearing - lastBearing)
-            }
-            // Normalize heading change to [0,180]
-            if headingChange > 180 { headingChange = 360 - headingChange }
-        }
-        // Clamp speed for threshold scaling
-        let clampedSpeed = max(0.0, min(speed, 12.0))
-        // Heuristic: base threshold small; increase slightly on straight segments at higher speed
-        let base: Double = 0.5
-        let straightBoost = base + (clampedSpeed * 0.15) // ~2.3m at 12 m/s
-        let isTurning = headingChange >= 8 // degrees
-        let poorAccuracy = hAcc > 10 || currentCourse < 0 || currentCourseAcc > 25
-        if isTurning || poorAccuracy {
-            adaptiveMinStepMeters = base // denser sampling in turns or low confidence
-        } else {
-            adaptiveMinStepMeters = min(2.5, straightBoost)
-        }
-        
+
         if let last = lastLocation {
             let distanceMeters = location.distance(from: last)
-            // Adaptive threshold based on current speed
-            if distanceMeters > adaptiveMinStepMeters {
+            // Threshold lowered to 0.5 m to capture more segments while filtering minimal jitter
+            if distanceMeters > 0.1 {
                 distanceKm += distanceMeters / 1000
                 // MET value for skateboarding ~4.0 kcal/(kg*hour), avg 70kg person
                 calories = distanceKm * 70 * 4.0 / 1000
             }
         }
-        
+
         lastLocation = location
         routePoints.append(RoutePoint(
             latitude: location.coordinate.latitude,
@@ -237,4 +195,3 @@ class TrainingViewModel: ObservableObject {
         activityByHour = byHour
     }
 }
-
