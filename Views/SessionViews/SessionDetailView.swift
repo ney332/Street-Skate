@@ -82,14 +82,14 @@ struct SessionDetailView: View {
                                         ForEach(session.tricksAttempted, id: \.self) { trick in
                                             Text(trick)
                                                 .font(.system(size: 13, weight: .semibold))
-                                                .foregroundColor(Color(hex: "#FFD700"))
+                                                .foregroundColor(Color(hex: "#87FF00"))
                                                 .padding(.horizontal, 14)
                                                 .padding(.vertical, 8)
-                                                .background(Color(hex: "#FFD700").opacity(0.12))
+                                                .background(Color(hex: "#87FF00").opacity(0.12))
                                                 .cornerRadius(10)
                                                 .overlay(
                                                     RoundedRectangle(cornerRadius: 10)
-                                                        .stroke(Color(hex: "#FFD700").opacity(0.25), lineWidth: 1)
+                                                        .stroke(Color(hex: "#87FF00").opacity(0.25), lineWidth: 1)
                                                 )
                                         }
                                     }
@@ -119,12 +119,12 @@ struct SessionDetailView: View {
                         showShareSheet = true
                     }) {
                         Image(systemName: "square.and.arrow.up")
-                            .foregroundColor(Color(hex: "#FFD700"))
+                            .foregroundColor(Color(hex: "#87FF00"))
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color(hex: "#87FF00"))
                         .fontWeight(.semibold)
                 }
             }
@@ -161,12 +161,31 @@ struct RouteMapCard: View {
         return CLLocationCoordinate2D(latitude: avgLat, longitude: avgLon)
     }
     
+    var boundingRegion: MKCoordinateRegion? {
+        guard !coordinates.isEmpty else { return nil }
+        var minLat = coordinates.first!.latitude
+        var maxLat = minLat
+        var minLon = coordinates.first!.longitude
+        var maxLon = minLon
+        for c in coordinates {
+            minLat = min(minLat, c.latitude)
+            maxLat = max(maxLat, c.latitude)
+            minLon = min(minLon, c.longitude)
+            maxLon = max(maxLon, c.longitude)
+        }
+        let span = MKCoordinateSpan(latitudeDelta: max(0.002, (maxLat - minLat) * 1.3),
+                                    longitudeDelta: max(0.002, (maxLon - minLon) * 1.3))
+        let center = CLLocationCoordinate2D(latitude: (minLat + maxLat) / 2.0,
+                                            longitude: (minLon + maxLon) / 2.0)
+        return MKCoordinateRegion(center: center, span: span)
+    }
+    
     var body: some View {
         ZStack {
-            Map {
+            Map(initialPosition: .region(boundingRegion ?? MKCoordinateRegion(center: centerCoordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)))) {
                 if coordinates.count > 1 {
                     MapPolyline(coordinates: coordinates)
-                        .stroke(Color(hex: "#FFD700"), lineWidth: 3)
+                        .stroke(Color(hex: "#87FF00"), lineWidth: 3)
                 }
                 
                 if let first = coordinates.first {
@@ -187,9 +206,9 @@ struct RouteMapCard: View {
                 }
             }
             .mapStyle(.standard(elevation: .flat))
+            .allowsHitTesting(false)
             .frame(height: 200)
             .cornerRadius(16)
-            .disabled(true)
             
             // Legend overlay
             VStack {

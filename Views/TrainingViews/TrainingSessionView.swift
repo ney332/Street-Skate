@@ -31,7 +31,7 @@ struct TrainingSessionView: View {
                     MapPolyline(coordinates: sessionVM.routePoints.map {
                         CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
                     })
-                    .stroke(Color(hex: "#FFD700"), lineWidth: 4)
+                    .stroke(Color(hex: "#87FF00"), lineWidth: 4)
                 }
             }
             .mapStyle(mapStyle)
@@ -53,21 +53,6 @@ struct TrainingSessionView: View {
                     }
 
                     Spacer()
-
-                    // Speed indicator (when running)
-                    if sessionVM.isRunning && motionService.currentSpeedKmh > 0.5 {
-                        HStack(spacing: 6) {
-                            Image(systemName: "speedometer")
-                                .font(.system(size: 12))
-                            Text(String(format: "%.1f km/h", motionService.currentSpeedKmh))
-                                .font(.system(size: 13, weight: .bold))
-                        }
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 7)
-                        .background(.ultraThinMaterial)
-                        .cornerRadius(20)
-                    }
 
                     // Live badge
                     HStack(spacing: 8) {
@@ -94,7 +79,7 @@ struct TrainingSessionView: View {
                         .foregroundColor(.white)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)
-                        .background(Color(hex: "#FFD700").opacity(0.9))
+                        .background(Color(hex: "#87FF00").opacity(0.9))
                         .cornerRadius(20)
                         .transition(.move(edge: .top).combined(with: .opacity))
                 }
@@ -224,7 +209,7 @@ struct SessionMetricsPanel: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
                         .background(
-                            LinearGradient(colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")], startPoint: .leading, endPoint: .trailing)
+                            LinearGradient(colors: [Color(hex: "#87FF00"), Color(hex: "#87FF00")], startPoint: .leading, endPoint: .trailing)
                         )
                         .cornerRadius(16)
                     }
@@ -254,7 +239,7 @@ struct SessionMetricsPanel: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
                         .background(
-                            LinearGradient(colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")], startPoint: .leading, endPoint: .trailing)
+                            LinearGradient(colors: [Color(hex: "#87FF00")], startPoint: .leading, endPoint: .trailing)
                         )
                         .cornerRadius(16)
                     }
@@ -285,7 +270,7 @@ struct SessionMetric: View {
         HStack(spacing: 12) {
             Image(systemName: icon)
                 .font(.system(size: 18))
-                .foregroundColor(Color(hex: "#FFD700"))
+                .foregroundColor(Color(hex: "#87FF00"))
                 .frame(width: 30)
             
             VStack(alignment: .leading, spacing: 2) {

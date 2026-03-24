@@ -36,7 +36,7 @@ struct SessionSummaryView: View {
 
             // Background glow
             RadialGradient(
-                colors: [Color(hex: "#FFD700").opacity(0.12), Color.clear],
+                colors: [Color(hex: "#87FF00").opacity(0.12), Color.clear],
                 center: .top,
                 startRadius: 0,
                 endRadius: 400
@@ -49,7 +49,7 @@ struct SessionSummaryView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "checkmark.circle.fill")
                             .font(.system(size: 48))
-                            .foregroundColor(Color(hex: "#FFD700"))
+                            .foregroundColor(Color(hex: "#87FF00"))
                             .scaleEffect(appear ? 1 : 0.3)
                             .opacity(appear ? 1 : 0)
                             .animation(.spring(response: 0.6, dampingFraction: 0.6).delay(0.1), value: appear)
@@ -206,7 +206,7 @@ struct SessionSummaryView: View {
                         .padding(.vertical, 18)
                         .background(
                             LinearGradient(
-                                colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")],
+                                colors: [Color(hex: "#87FF00")],
                                 startPoint: .leading, endPoint: .trailing
                             )
                         )

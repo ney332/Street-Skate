@@ -39,7 +39,7 @@ struct XPLevel {
         XPLevel(level: 5, title: "Ledge Wizard",   icon: "wand.and.stars",       minXP: 2000,  maxXP: 3500,  accentColor: Color(hex: "#9C27B0")),
         XPLevel(level: 6, title: "Park Rat",       icon: "circle.dashed",        minXP: 3500,  maxXP: 5000,  accentColor: Color(hex: "#00BCD4")),
         XPLevel(level: 7, title: "Tech Master",    icon: "star.fill",            minXP: 5000,  maxXP: 8000,  accentColor: Color(hex: "#FF6B35")),
-        XPLevel(level: 8, title: "Pro Skater",     icon: "crown.fill",           minXP: 8000,  maxXP: 12000, accentColor: Color(hex: "#FFD700")),
+        XPLevel(level: 8, title: "Pro Skater",     icon: "crown.fill",           minXP: 8000,  maxXP: 12000, accentColor: Color(hex: "#87FF00")),
         XPLevel(level: 9, title: "Legend",         icon: "bolt.fill",            minXP: 12000, maxXP: 20000, accentColor: Color(hex: "#E91E63")),
         XPLevel(level: 10, title: "S.K.A.T.E God", icon: "sparkles",            minXP: 20000, maxXP: 99999, accentColor: Color(hex: "#FF1744")),
     ]
@@ -253,7 +253,7 @@ struct AllLevelsView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color(hex: "#87FF00"))
                         .fontWeight(.semibold)
                 }
             }

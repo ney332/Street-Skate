@@ -111,7 +111,7 @@ struct TrickLogView: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
                         .background(
-                            LinearGradient(colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")],
+                            LinearGradient(colors: [Color(hex: "#87FF00"), Color(hex: "#87FF00")],
                                            startPoint: .leading, endPoint: .trailing)
                         )
                         .cornerRadius(16)
@@ -127,7 +127,7 @@ struct TrickLogView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color(hex: "#87FF00"))
                         .fontWeight(.semibold)
                 }
             }
@@ -271,7 +271,7 @@ struct LogTrickSheet: View {
                                         Spacer()
                                         if selectedTrick == trick {
                                             Image(systemName: "checkmark.circle.fill")
-                                                .foregroundColor(Color(hex: "#FFD700"))
+                                                .foregroundColor(Color(hex: "#87FF00"))
                                         }
                                     }
                                     .padding(.horizontal, 16)
@@ -279,12 +279,12 @@ struct LogTrickSheet: View {
                                     .background(
                                         RoundedRectangle(cornerRadius: 10)
                                             .fill(selectedTrick == trick
-                                                  ? Color(hex: "#FFD700").opacity(0.1)
+                                                  ? Color(hex: "#87FF00").opacity(0.1)
                                                   : Color.white.opacity(0.04))
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 10)
                                                     .stroke(selectedTrick == trick
-                                                            ? Color(hex: "#FFD700").opacity(0.3)
+                                                            ? Color(hex: "#87FF00").opacity(0.3)
                                                             : Color.clear, lineWidth: 1)
                                             )
                                     )

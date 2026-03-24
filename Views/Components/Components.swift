@@ -8,7 +8,7 @@ struct FeaturePill: View {
         HStack(spacing: 6) {
             Image(systemName: icon)
                 .font(.system(size: 12))
-                .foregroundColor(Color(hex: "#FFD700"))
+                .foregroundColor(Color("verde"))
             Text(text)
                 .font(.system(size: 13, weight: .semibold))
                 .foregroundColor(.white)
@@ -35,7 +35,7 @@ struct FloatingTextField: View {
         HStack(spacing: 14) {
             Image(systemName: icon)
                 .font(.system(size: 16))
-                .foregroundColor(text.isEmpty ? Color.white.opacity(0.4) : Color(hex: "#FFD700"))
+                .foregroundColor(text.isEmpty ? Color.white.opacity(0.4) : Color("verde"))
                 .frame(width: 20)
             
             TextField("", text: $text)
@@ -54,7 +54,7 @@ struct FloatingTextField: View {
                 .fill(Color.white.opacity(0.06))
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
-                        .stroke(text.isEmpty ? Color.white.opacity(0.1) : Color(hex: "#FFD700").opacity(0.5), lineWidth: 1.5)
+                        .stroke(text.isEmpty ? Color.white.opacity(0.1) : Color("verde").opacity(0.5), lineWidth: 1.5)
                 )
         )
         .animation(.easeInOut(duration: 0.2), value: text.isEmpty)
@@ -74,11 +74,11 @@ struct PrimaryButton: View {
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(isEnabled
-                        ? LinearGradient(colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")], startPoint: .leading, endPoint: .trailing)
+                        ? LinearGradient(colors: [Color("verde"), Color(hex: "#FF8C00")], startPoint: .leading, endPoint: .trailing)
                         : LinearGradient(colors: [Color.white.opacity(0.1), Color.white.opacity(0.1)], startPoint: .leading, endPoint: .trailing)
                     )
             )
-            .shadow(color: isEnabled ? Color(hex: "#FFD700").opacity(0.3) : .clear, radius: 12, y: 4)
+            .shadow(color: isEnabled ? Color("verde").opacity(0.3) : .clear, radius: 12, y: 4)
             .animation(.easeInOut(duration: 0.2), value: isEnabled)
     }
 }

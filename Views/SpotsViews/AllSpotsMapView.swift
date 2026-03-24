@@ -68,7 +68,7 @@ struct AllSpotsMapView: View {
                                     .foregroundColor(mapStyleIndex == i ? .black : .white)
                                     .padding(.horizontal, 10)
                                     .padding(.vertical, 6)
-                                    .background(mapStyleIndex == i ? Color(hex: "#FFD700") : Color.clear)
+                                    .background(mapStyleIndex == i ? Color("verde") : Color.clear)
                             }
                         }
                     }
@@ -82,7 +82,7 @@ struct AllSpotsMapView: View {
                 if !spotsService.nearbySpots.isEmpty {
                     HStack(spacing: 6) {
                         Image(systemName: "mappin.circle.fill")
-                            .foregroundColor(Color(hex: "#FFD700"))
+                            .foregroundColor(Color("verde"))
                         Text("\(spotsService.nearbySpots.count) spots found")
                             .font(.system(size: 13, weight: .semibold))
                             .foregroundColor(.white)
@@ -174,7 +174,7 @@ struct MapSpotChip: View {
         HStack(spacing: 8) {
             Image(systemName: spot.type.icon)
                 .font(.system(size: 12))
-                .foregroundColor(Color(hex: "#FFD700"))
+                .foregroundColor(Color("verde"))
             Text(spot.name)
                 .font(.system(size: 13, weight: .semibold))
                 .foregroundColor(.white)
@@ -229,7 +229,7 @@ struct SelectedSpotBar: View {
                         .foregroundColor(Color.white.opacity(0.4))
                     Image(systemName: "star.fill")
                         .font(.system(size: 10))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                     Text(String(format: "%.1f", spot.rating))
                         .font(.system(size: 12))
                         .foregroundColor(Color.white.opacity(0.5))
@@ -244,7 +244,7 @@ struct SelectedSpotBar: View {
                     .foregroundColor(.black)
                     .padding(.horizontal, 14)
                     .padding(.vertical, 8)
-                    .background(Color(hex: "#FFD700"))
+                    .background(Color("verde"))
                     .cornerRadius(10)
             }
 

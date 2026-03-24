@@ -77,7 +77,7 @@ struct SpotDetailView: View {
                                     HStack(spacing: 3) {
                                         Image(systemName: "star.fill")
                                             .font(.system(size: 11))
-                                            .foregroundColor(Color(hex: "#FFD700"))
+                                            .foregroundColor(Color(hex: "#87FF00"))
                                         Text(String(format: "%.1f", spot.rating))
                                             .font(.system(size: 13, weight: .semibold))
                                             .foregroundColor(Color.white.opacity(0.7))
@@ -90,7 +90,7 @@ struct SpotDetailView: View {
                             VStack(spacing: 2) {
                                 Image(systemName: "location.fill")
                                     .font(.system(size: 14))
-                                    .foregroundColor(Color(hex: "#FFD700"))
+                                    .foregroundColor(Color(hex: "#87FF00"))
                                 Text(spot.distanceText)
                                     .font(.system(size: 15, weight: .black))
                                     .foregroundColor(.white)
@@ -120,7 +120,7 @@ struct SpotDetailView: View {
                                 .padding(.vertical, 15)
                                 .background(
                                     LinearGradient(
-                                        colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")],
+                                        colors: [Color(hex: "#87FF00"), Color(hex: "#FF8C00")],
                                         startPoint: .leading, endPoint: .trailing
                                     )
                                 )

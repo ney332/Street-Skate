@@ -27,7 +27,7 @@ class NotificationService {
         center.removePendingNotificationRequests(withIdentifiers: ["daily_skate_reminder"])
 
         let messages = [
-            "🛹 Time to shred! Your board is waiting.",
+            "🛹 Time to skate! Your board is waiting.",
             "🔥 Don't break the streak — hit the streets!",
             "⚡ Your skate session won't happen by itself.",
             "🏆 Every push counts. Go skate!",

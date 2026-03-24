@@ -49,7 +49,7 @@ enum TrickLogStatus: String, Codable, CaseIterable {
         case .landed:    return Color(hex: "#4CAF50")
         case .almost:    return Color(hex: "#FF9800")
         case .learning:  return Color(hex: "#2196F3")
-        case .firstTime: return Color(hex: "#FFD700")
+        case .firstTime: return Color(hex: "#87FF00")
         }
     }
 }

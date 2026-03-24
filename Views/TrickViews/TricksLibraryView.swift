@@ -92,12 +92,12 @@ struct TricksLibraryView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: { showTrickLog = true }) {
 //                        Image(systemName: "list.clipboard")
-//                            /*.foregroundColor(Color(hex: "#FFD700")*/)
+//                            /*.foregroundColor(Color(hex: "#87FF00")*/)
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                         .fontWeight(.semibold)
                 }
             }
@@ -139,7 +139,7 @@ struct CategoryChip: View {
                 .padding(.vertical, 8)
                 .background(
                     Capsule()
-                        .fill(isSelected ? Color(hex: "#FFD700") : Color.white.opacity(0.08))
+                        .fill(isSelected ? Color("verde") : Color.white.opacity(0.08))
                 )
         }
         .animation(.easeInOut(duration: 0.2), value: isSelected)
@@ -166,11 +166,11 @@ struct TrickRow: View {
             // Lock/unlock indicator
             ZStack {
                 Circle()
-                    .fill(isUnlocked ? Color(hex: "#FFD700").opacity(0.15) : Color.white.opacity(0.05))
+                    .fill(isUnlocked ? Color("verde").opacity(0.15) : Color.white.opacity(0.05))
                     .frame(width: 44, height: 44)
                 Image(systemName: isUnlocked ? "checkmark" : "lock.fill")
                     .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(isUnlocked ? Color(hex: "#FFD700") : Color.white.opacity(0.3))
+                    .foregroundColor(isUnlocked ? Color("verde") : Color.white.opacity(0.3))
             }
             
             VStack(alignment: .leading, spacing: 4) {
@@ -194,10 +194,10 @@ struct TrickRow: View {
             VStack(spacing: 2) {
                 Text("+\(trick.xpReward)")
                     .font(.system(size: 13, weight: .black, design: .rounded))
-                    .foregroundColor(isUnlocked ? Color(hex: "#FFD700") : Color.white.opacity(0.3))
+                    .foregroundColor(isUnlocked ? Color("verde") : Color.white.opacity(0.3))
                 Text("XP")
                     .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(isUnlocked ? Color(hex: "#FFD700").opacity(0.7) : Color.white.opacity(0.2))
+                    .foregroundColor(isUnlocked ? Color("verde").opacity(0.7) : Color.white.opacity(0.2))
             }
             
             if !isUnlocked {
@@ -215,7 +215,7 @@ struct TrickRow: View {
                         .padding(.vertical, 8)
                         .background(
                             Capsule().fill(LinearGradient(
-                                colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")],
+                                colors: [Color("verde"), Color("verde")],
                                 startPoint: .leading, endPoint: .trailing
                             ))
                         )
@@ -229,8 +229,9 @@ struct TrickRow: View {
                 .fill(Color.white.opacity(isUnlocked ? 0.05 : 0.03))
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(isUnlocked ? Color(hex: "#FFD700").opacity(0.2) : Color.white.opacity(0.06), lineWidth: 1)
+                        .stroke(isUnlocked ? Color("verde").opacity(0.2) : Color.white.opacity(0.06), lineWidth: 1)
                 )
         )
     }
 }
+

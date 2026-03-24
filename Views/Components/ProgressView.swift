@@ -102,7 +102,7 @@ struct ProgressView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color(hex: "#87FF00"))
                         .fontWeight(.semibold)
                 }
             }
@@ -296,7 +296,7 @@ struct TrickProgressSection: View {
                         Spacer()
                         Text("\(item.unlocked)/\(item.total)")
                             .font(.system(size: 13))
-                            .foregroundColor(Color(hex: "#FFD700"))
+                            .foregroundColor(Color(hex: "#87FF00"))
                     }
                     
                     GeometryReader { geo in
@@ -305,7 +305,7 @@ struct TrickProgressSection: View {
                                 .fill(Color.white.opacity(0.08))
                                 .frame(height: 6)
                             RoundedRectangle(cornerRadius: 4)
-                                .fill(LinearGradient(colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")], startPoint: .leading, endPoint: .trailing))
+                                .fill(LinearGradient(colors: [Color(hex: "#87FF00"), Color(hex: "#87FF00")], startPoint: .leading, endPoint: .trailing))
                                 .frame(width: geo.size.width * progress, height: 6)
                         }
                     }

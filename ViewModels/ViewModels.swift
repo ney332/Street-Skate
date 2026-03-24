@@ -12,7 +12,8 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.activityType = .otherNavigation // hint para o sistema filtrar melhor
     }
     
     func requestLocation() {
@@ -87,7 +88,7 @@ class SessionViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             guard let self = self, let start = self.startTime else { return }
             self.duration = Date().timeIntervalSince(start) + self.pausedTime
             // Simulate push count (roughly 1 push per 3 seconds while active)
-            if Int(self.duration) % 3 == 0 && Int(self.duration) > 0 {
+            if Int(self.duration) % 7 == 0 && Int(self.duration) > 0 {
                 self.pushCount += 1
             }
         }
@@ -128,22 +129,40 @@ class SessionViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard isRunning, let location = locations.last else { return }
 
-        if let last = lastLocation {
-            let distanceMeters = location.distance(from: last)
-            // Threshold lowered to 0.5 m to capture more segments while filtering minimal jitter
-            if distanceMeters > 0.1 {
-                distanceKm += distanceMeters / 1000
-                // MET value for skateboarding ~4.0 kcal/(kg*hour), avg 70kg person
-                calories = distanceKm * 70 * 4.0 / 1000
-            }
+        // Filter by accuracy to avoid noisy points
+        let accuracy = location.horizontalAccuracy
+        if accuracy < 0 || accuracy > 50 { // discard very inaccurate points (>50m)
+            return
         }
 
-        lastLocation = location
-        routePoints.append(RoutePoint(
-            latitude: location.coordinate.latitude,
-            longitude: location.coordinate.longitude,
-            timestamp: Date()
-        ))
+        // If we have a last location, compute distance and filter small jitters
+        if let last = lastLocation {
+            let distanceMeters = location.distance(from: last)
+            // Only accept segments above a minimum threshold to reduce jitter
+            let minStep: CLLocationDistance = 3.0
+            if distanceMeters >= minStep {
+                distanceKm += distanceMeters / 1000
+                // Simple calorie estimate proportional to distance (placeholder)
+                calories = distanceKm * 70 * 4.0 / 1000
+
+                // Append route point only when we accept the step
+                routePoints.append(RoutePoint(
+                    latitude: location.coordinate.latitude,
+                    longitude: location.coordinate.longitude,
+                    timestamp: Date()
+                ))
+
+                lastLocation = location
+            }
+        } else {
+            // First valid point
+            routePoints.append(RoutePoint(
+                latitude: location.coordinate.latitude,
+                longitude: location.coordinate.longitude,
+                timestamp: Date()
+            ))
+            lastLocation = location
+        }
     }
 }
 
@@ -195,3 +214,4 @@ class TrainingViewModel: ObservableObject {
         activityByHour = byHour
     }
 }
+

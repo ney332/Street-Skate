@@ -20,7 +20,7 @@ struct TrainingView: View {
                         Text("Training")
                             .font(.system(size: 32, weight: .black, design: .rounded))
                             .foregroundColor(.white)
-                        Text("Time to shred 🛹")
+                        Text("Time to skate")
                             .font(.system(size: 15))
                             .foregroundColor(Color.white.opacity(0.5))
                     }
@@ -119,7 +119,7 @@ struct StartTrainingCard: View {
                                 .frame(width: 60, height: 60)
                             Image(systemName: "play.fill")
                                 .font(.system(size: 22))
-                                .foregroundColor(Color(hex: "#87FF00"))
+                                .foregroundColor(Color("verde"))
                         }
                         
                         VStack(alignment: .leading, spacing: 4) {
@@ -141,7 +141,7 @@ struct StartTrainingCard: View {
                 .padding(24)
             }
             .frame(height: 200)
-            .shadow(color: Color(hex: "#FFD700").opacity(0.1), radius: 20, y: 8)
+            .shadow(color: Color("verde").opacity(0.1), radius: 20, y: 8)
         }
         .scaleEffect(isPressed ? 0.97 : 1.0)
         .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isPressed)
@@ -159,7 +159,7 @@ struct InfoPill: View {
         HStack(spacing: 5) {
             Image(systemName: icon)
                 .font(.system(size: 11))
-                .foregroundColor(Color(hex: "#FFD700"))
+                .foregroundColor(Color("verde"))
             Text(text)
                 .font(.system(size: 12, weight: .medium))
                 .foregroundColor(Color.white.opacity(0.6))
@@ -287,7 +287,7 @@ struct ActivitySummaryCard: View {
                     RoundedRectangle(cornerRadius: 3)
                         .fill(
                             activity > 0
-                            ? LinearGradient(colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")], startPoint: .bottom, endPoint: .top)
+                            ? LinearGradient(colors: [Color("verde"), Color("verde")], startPoint: .bottom, endPoint: .top)
                             : LinearGradient(colors: [Color.white.opacity(0.06), Color.white.opacity(0.06)], startPoint: .bottom, endPoint: .top)
                         )
                         .frame(height: max(4, CGFloat(activity) * 40))
@@ -366,11 +366,11 @@ struct SessionRowCard: View {
         HStack(spacing: 14) {
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(Color(hex: "#FFD700").opacity(0.12))
+                    .fill(Color("verde").opacity(0.12))
                     .frame(width: 48, height: 48)
                 Image(systemName: "figure.skating")
                     .font(.system(size: 20))
-                    .foregroundColor(Color(hex: "#FFD700"))
+                    .foregroundColor(Color("verde"))
             }
             
             VStack(alignment: .leading, spacing: 4) {
@@ -444,16 +444,16 @@ struct TrickSelectorForTraining: View {
                                         Spacer()
                                         if isUnlocked {
                                             Image(systemName: "checkmark.seal.fill")
-                                                .foregroundColor(Color(hex: "#FFD700"))
+                                                .foregroundColor(Color("verde"))
                                                 .font(.system(size: 14))
                                         }
                                         ZStack {
                                             Circle()
-                                                .stroke(isSelected ? Color(hex: "#FFD700") : Color.white.opacity(0.2), lineWidth: 2)
+                                                .stroke(isSelected ? Color("verde") : Color.white.opacity(0.2), lineWidth: 2)
                                                 .frame(width: 24, height: 24)
                                             if isSelected {
                                                 Circle()
-                                                    .fill(Color(hex: "#FFD700"))
+                                                    .fill(Color("verde"))
                                                     .frame(width: 14, height: 14)
                                             }
                                         }
@@ -461,10 +461,10 @@ struct TrickSelectorForTraining: View {
                                     .padding(14)
                                     .background(
                                         RoundedRectangle(cornerRadius: 14)
-                                            .fill(isSelected ? Color(hex: "#FFD700").opacity(0.08) : Color.white.opacity(0.04))
+                                            .fill(isSelected ? Color("verde").opacity(0.08) : Color.white.opacity(0.04))
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 14)
-                                                    .stroke(isSelected ? Color(hex: "#FFD700").opacity(0.3) : Color.clear, lineWidth: 1)
+                                                    .stroke(isSelected ? Color("verde").opacity(0.3) : Color.clear, lineWidth: 1)
                                             )
                                     )
                                 }
@@ -497,3 +497,4 @@ struct TrickSelectorForTraining: View {
         .preferredColorScheme(.dark)
     }
 }
+

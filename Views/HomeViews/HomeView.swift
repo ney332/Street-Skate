@@ -126,30 +126,30 @@ struct HomeHeader: View {
             Button(action: { onAchievementsTap?() }) {
                 Image(systemName: "trophy.fill")
                     .font(.system(size: 16))
-                    .foregroundColor(Color(hex: "#FFD700"))
+                    .foregroundColor(Color("verde"))
                     .frame(width: 40, height: 40)
-                    .background(Color(hex: "#FFD700").opacity(0.12))
+                    .background(Color("verde").opacity(0.12))
                     .clipShape(Circle())
-                    .overlay(Circle().stroke(Color(hex: "#FFD700").opacity(0.2), lineWidth: 1))
+                    .overlay(Circle().stroke(Color("verde").opacity(0.2), lineWidth: 1))
             }
             
             // XP Badge
             VStack(spacing: 2) {
                 Text("\(user?.xp ?? 0)")
                     .font(.system(size: 20, weight: .black, design: .rounded))
-                    .foregroundColor(Color(hex: "#FFD700"))
+                    .foregroundColor(Color("verde"))
                 Text("XP")
                     .font(.system(size: 11, weight: .bold))
-                    .foregroundColor(Color(hex: "#FFD700").opacity(0.7))
+                    .foregroundColor(Color("verde").opacity(0.7))
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
             .background(
                 RoundedRectangle(cornerRadius: 14)
-                    .fill(Color(hex: "#FFD700").opacity(0.12))
+                    .fill(Color("verde").opacity(0.12))
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(Color(hex: "#FFD700").opacity(0.25), lineWidth: 1)
+                            .stroke(Color("verde").opacity(0.25), lineWidth: 1)
                     )
             )
         }
@@ -194,7 +194,7 @@ struct TricksSummaryCard: View {
                             .frame(height: 6)
                         RoundedRectangle(cornerRadius: 4)
                             .fill(LinearGradient(
-                                colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")],
+                                colors: [Color("verde"), Color("verde")],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             ))
@@ -206,7 +206,7 @@ struct TricksSummaryCard: View {
                 HStack {
                     Label("\(unlockedCount) unlocked", systemImage: "lock.open.fill")
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                     Spacer()
                     Text("\(totalCount - unlockedCount) to go")
                         .font(.system(size: 14))
@@ -222,7 +222,7 @@ struct TricksSummaryCard: View {
                                 .foregroundColor(.black)
                                 .padding(.horizontal, 12)
                                 .padding(.vertical, 6)
-                                .background(Capsule().fill(Color(hex: "#FFD700")))
+                                .background(Capsule().fill(Color("verde")))
                         }
                     }
                 }
@@ -251,7 +251,7 @@ struct TricksSummaryCardCompact: View {
             HStack {
                 Image(systemName: "lock.open.fill")
                     .font(.system(size: 16))
-                    .foregroundColor(Color(hex: "#FFD700"))
+                    .foregroundColor(Color("verde"))
                 Spacer()
                 Image(systemName: "chevron.right")
                     .font(.system(size: 11))
@@ -270,7 +270,7 @@ struct TricksSummaryCardCompact: View {
         .background(
             RoundedRectangle(cornerRadius: 18)
                 .fill(Color.white.opacity(0.06))
-                .overlay(RoundedRectangle(cornerRadius: 18).stroke(Color(hex: "#FFD700").opacity(0.15), lineWidth: 1))
+                .overlay(RoundedRectangle(cornerRadius: 18).stroke(Color("verde").opacity(0.15), lineWidth: 1))
         )
     }
 }
@@ -454,7 +454,7 @@ struct SpotCard: View {
                 HStack(spacing: 3) {
                     Image(systemName: "star.fill")
                         .font(.system(size: 11))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                     Text(String(format: "%.1f", spot.rating))
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(Color.white.opacity(0.6))
@@ -498,10 +498,10 @@ struct MetricsCard: View {
                 Spacer()
                 Text(user?.level.rawValue ?? "")
                     .font(.system(size: 12, weight: .bold))
-                    .foregroundColor(Color(hex: "#FFD700"))
+                    .foregroundColor(Color("verde"))
                     .padding(.horizontal, 10)
                     .padding(.vertical, 4)
-                    .background(Color(hex: "#FFD700").opacity(0.15))
+                    .background(Color("verde").opacity(0.15))
                     .cornerRadius(8)
             }
 
@@ -519,7 +519,7 @@ struct MetricsCard: View {
                     Spacer()
                     Text(xpText)
                         .font(.system(size: 13, weight: .semibold))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                 }
 
                 LevelProgressBar(progress: levelProgress)
@@ -536,7 +536,7 @@ struct MetricsCard: View {
                     Image(systemName: "chevron.right")
                         .font(.system(size: 12))
                 }
-                .foregroundColor(Color(hex: "#FFD700"))
+                .foregroundColor(Color("verde"))
                 .padding(.top, 4)
             }
         }
@@ -568,13 +568,13 @@ struct LevelProgressBar: View {
                 RoundedRectangle(cornerRadius: 6)
                     .fill(
                         LinearGradient(
-                            colors: [Color(hex: "#FFD700"), Color(hex: "#FF6B35")],
+                            colors: [Color("verde"), Color(hex: "#FF6B35")],
                             startPoint: .leading,
                             endPoint: .trailing
                         )
                     )
                     .frame(width: geo.size.width * clampedProgress, height: 10)
-                    .shadow(color: Color(hex: "#FFD700").opacity(0.4), radius: 4)
+                    .shadow(color: Color("verde").opacity(0.4), radius: 4)
             }
         }
     }
@@ -589,7 +589,7 @@ struct StatBox: View {
         VStack(spacing: 6) {
             Image(systemName: icon)
                 .font(.system(size: 16))
-                .foregroundColor(Color(hex: "#FFD700"))
+                .foregroundColor(Color("verde"))
             Text(value)
                 .font(.system(size: 18, weight: .black, design: .rounded))
                 .foregroundColor(.white)

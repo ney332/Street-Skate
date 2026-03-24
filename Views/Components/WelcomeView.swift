@@ -24,19 +24,19 @@ struct WelcomeView: View {
                 // Logo
                 ZStack {
                     Circle()
-                        .fill(Color(hex: "#FFD700").opacity(0.15))
+                        .fill(Color(hex: "#87FF00").opacity(0.15))
                         .frame(width: 140, height: 140)
                         .blur(radius: 20)
                     
                     ZStack {
                         RoundedRectangle(cornerRadius: 32)
                             .fill(LinearGradient(
-                                colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")],
+                                colors: [Color(hex: "#87FF00"), Color(hex: "#87FF00")],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             ))
                             .frame(width: 104, height: 104)
-                            .shadow(color: Color(hex: "#FFD700").opacity(0.4), radius: 24)
+                            .shadow(color: Color(hex: "#87FF00").opacity(0.4), radius: 24)
                         
                         Text("SK8")
                             .font(.system(size: 36, weight: .black, design: .rounded))
@@ -86,13 +86,13 @@ struct WelcomeView: View {
                     .padding(.vertical, 18)
                     .background(
                         LinearGradient(
-                            colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")],
+                            colors: [Color(hex: "#87FF00"), Color(hex: "#87FF00")],
                             startPoint: .leading,
                             endPoint: .trailing
                         )
                     )
                     .cornerRadius(18)
-                    .shadow(color: Color(hex: "#FFD700").opacity(0.35), radius: 16, y: 6)
+                    .shadow(color: Color(hex: "#87FF00").opacity(0.35), radius: 16, y: 6)
                 }
                 .padding(.horizontal, 32)
                 .padding(.bottom, 56)

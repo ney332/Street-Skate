@@ -41,7 +41,7 @@ struct AchievementsView: View {
                     VStack(spacing: 24) {
                         // Header stats
                         HStack(spacing: 0) {
-                            AchievStat(value: "\(unlockedCount)", label: "Unlocked", color: Color(hex: "#FFD700"))
+                            AchievStat(value: "\(unlockedCount)", label: "Unlocked", color: Color("verde"))
                             Divider().background(Color.white.opacity(0.1)).frame(height: 40)
                             AchievStat(value: "\(lockedCount)", label: "Remaining", color: Color.white.opacity(0.4))
                             Divider().background(Color.white.opacity(0.1)).frame(height: 40)
@@ -77,7 +77,7 @@ struct AchievementsView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                         .fontWeight(.semibold)
                 }
             }
@@ -122,16 +122,16 @@ struct AchievCard: View {
         VStack(spacing: 10) {
             ZStack {
                 Circle()
-                    .fill(achievement.isUnlocked ? Color(hex: "#FFD700").opacity(0.15) : Color.white.opacity(0.05))
+                    .fill(achievement.isUnlocked ? Color("verde").opacity(0.15) : Color.white.opacity(0.05))
                     .frame(width: 56, height: 56)
                 
                 Image(systemName: achievement.icon)
                     .font(.system(size: 24))
-                    .foregroundColor(achievement.isUnlocked ? Color(hex: "#FFD700") : Color.white.opacity(0.2))
+                    .foregroundColor(achievement.isUnlocked ? Color("verde") : Color.white.opacity(0.2))
                 
                 if achievement.isUnlocked {
                     Circle()
-                        .stroke(Color(hex: "#FFD700").opacity(0.4), lineWidth: 2)
+                        .stroke(Color("verde").opacity(0.4), lineWidth: 2)
                         .frame(width: 56, height: 56)
                 }
             }
@@ -153,7 +153,7 @@ struct AchievCard: View {
             if achievement.xpReward > 0 {
                 Text("+\(achievement.xpReward) XP")
                     .font(.system(size: 11, weight: .bold))
-                    .foregroundColor(achievement.isUnlocked ? Color(hex: "#FFD700") : Color.white.opacity(0.2))
+                    .foregroundColor(achievement.isUnlocked ? Color("verde") : Color.white.opacity(0.2))
             }
             
             if let date = achievement.unlockedAt {
@@ -169,7 +169,7 @@ struct AchievCard: View {
                 .fill(achievement.isUnlocked ? Color.white.opacity(0.07) : Color.white.opacity(0.03))
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(achievement.isUnlocked ? Color(hex: "#FFD700").opacity(0.25) : Color.white.opacity(0.06), lineWidth: 1)
+                        .stroke(achievement.isUnlocked ? Color("verde").opacity(0.25) : Color.white.opacity(0.06), lineWidth: 1)
                 )
         )
     }
@@ -203,17 +203,17 @@ struct AchievementToast: View {
             HStack(spacing: 14) {
                 ZStack {
                     Circle()
-                        .fill(Color(hex: "#FFD700").opacity(0.2))
+                        .fill(Color("verde").opacity(0.2))
                         .frame(width: 48, height: 48)
                     Image(systemName: achievement.icon)
                         .font(.system(size: 22))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                 }
                 
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Achievement Unlocked!")
                         .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                         .tracking(0.5)
                     Text(achievement.title)
                         .font(.system(size: 16, weight: .black))
@@ -240,9 +240,9 @@ struct AchievementToast: View {
                     .fill(Color(red: 0.1, green: 0.1, blue: 0.12))
                     .overlay(
                         RoundedRectangle(cornerRadius: 18)
-                            .stroke(Color(hex: "#FFD700").opacity(0.35), lineWidth: 1.5)
+                            .stroke(Color("verde").opacity(0.35), lineWidth: 1.5)
                     )
-                    .shadow(color: Color(hex: "#FFD700").opacity(0.2), radius: 16, y: 4)
+                    .shadow(color: Color("verde").opacity(0.2), radius: 16, y: 4)
             )
             .padding(.horizontal, 16)
             
@@ -252,3 +252,4 @@ struct AchievementToast: View {
         .transition(.move(edge: .top).combined(with: .opacity))
     }
 }
+

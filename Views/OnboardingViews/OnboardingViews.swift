@@ -17,7 +17,7 @@ struct OnboardingContainerView: View {
                 HStack(spacing: 8) {
                     ForEach(0..<3) { i in
                         Capsule()
-                            .fill(i <= currentStep ? Color(hex: "#FFD700") : Color.white.opacity(0.2))
+                            .fill(i <= currentStep ? Color(hex: "#87FF00") : Color.white.opacity(0.2))
                             .frame(height: 4)
                             .animation(.easeInOut(duration: 0.3), value: currentStep)
                     }
@@ -177,7 +177,7 @@ struct LevelCard: View {
             HStack(spacing: 16) {
                 ZStack {
                     Circle()
-                        .fill(isSelected ? Color(hex: "#FFD700") : Color.white.opacity(0.1))
+                        .fill(isSelected ? Color(hex: "#87FF00") : Color.white.opacity(0.1))
                         .frame(width: 48, height: 48)
                     Image(systemName: level.icon)
                         .font(.system(size: 20))
@@ -199,7 +199,7 @@ struct LevelCard: View {
                 if isSelected {
                     Image(systemName: "checkmark.circle.fill")
                         .font(.system(size: 22))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color(hex: "#87FF00"))
                 }
             }
             .padding(20)
@@ -208,7 +208,7 @@ struct LevelCard: View {
                     .fill(Color.white.opacity(isSelected ? 0.1 : 0.05))
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
-                            .stroke(isSelected ? Color(hex: "#FFD700") : Color.white.opacity(0.1), lineWidth: 1.5)
+                            .stroke(isSelected ? Color(hex: "#87FF00") : Color.white.opacity(0.1), lineWidth: 1.5)
                     )
             )
         }
@@ -246,10 +246,10 @@ struct OnboardingStep3: View {
             if !selectedTricks.isEmpty {
                 HStack {
                     Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color(hex: "#87FF00"))
                     Text("\(selectedTricks.count) tricks unlocked")
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color(hex: "#87FF00"))
                 }
                 .padding(.top, 12)
             }

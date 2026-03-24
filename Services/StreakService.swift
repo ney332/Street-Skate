@@ -111,7 +111,7 @@ struct StreakCard: View {
             VStack(alignment: .trailing, spacing: 2) {
                 Text("\(streakService.longestStreak)")
                     .font(.system(size: 20, weight: .black, design: .rounded))
-                    .foregroundColor(Color(hex: "#FFD700"))
+                    .foregroundColor(Color(hex: "#87FF00"))
                 Text("best")
                     .font(.system(size: 11))
                     .foregroundColor(Color.white.opacity(0.35))
@@ -172,12 +172,12 @@ struct WeeklyCalendarStrip: View {
                 VStack(spacing: 6) {
                     Text(dayLabel(offset))
                         .font(.system(size: 10, weight: .medium))
-                        .foregroundColor(isToday ? Color(hex: "#FFD700") : Color.white.opacity(0.35))
+                        .foregroundColor(isToday ? Color(hex: "#87FF00") : Color.white.opacity(0.35))
 
                     ZStack {
                         Circle()
                             .fill(active
-                                  ? (isToday ? Color(hex: "#FFD700") : Color(hex: "#FF6B35"))
+                                  ? (isToday ? Color(hex: "#87FF00") : Color(hex: "#FF6B35"))
                                   : Color.white.opacity(0.07))
                             .frame(width: 28, height: 28)
 

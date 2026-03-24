@@ -26,6 +26,7 @@ struct SettingsView: View {
             }
         }
     }
+    @State private var showDrawSkate = false
     @State private var showAbout = false
     @State private var showPrivacy = false
     @State private var showAchievements = false
@@ -54,24 +55,9 @@ struct SettingsView: View {
                     ProfileCard(user: user)
                         .padding(.horizontal, 20)
                     
-                    Button(action: { showEditProfile = true }) {
-                        HStack {
-                            Image(systemName: "pencil")
-                                .font(.system(size: 14))
-                            Text("Edit Profile")
-                                .font(.system(size: 14, weight: .semibold))
-                        }
-                        .foregroundColor(Color(hex: "#FFD700"))
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 10)
-                        .background(Color(hex: "#FFD700").opacity(0.08))
-                        .cornerRadius(10)
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "#FFD700").opacity(0.2), lineWidth: 1))
-                    }
-                    
                     SettingsSection(title: "Data & Activity") {
-                        NavigationRowSettings(icon: "list.clipboard.fill", iconColor: Color(hex: "#4CAF50"), title: "Trick Log") {
-                            showTrickLog = true
+                        NavigationRowSettings(icon: "figure.skateboarding", iconColor: Color(hex: "#4CAF50"), title: "Game Skate") {
+                            showDrawSkate = true
                         }
                         Divider().background(Color.white.opacity(0.08)).padding(.leading, 54)
                         NavigationRowSettings(icon: "chart.xyaxis.line", iconColor: Color(hex: "#2196F3"), title: "Progress Charts") {
@@ -160,7 +146,7 @@ struct SettingsView: View {
         .sheet(isPresented: $showPrivacy) { PrivacyView() }
         .sheet(isPresented: $showAchievements) { AchievementsView().environmentObject(appState) }
         .sheet(isPresented: $showProgress) { ProgressView().environmentObject(appState) }
-        .sheet(isPresented: $showTrickLog) { TrickLogView().environmentObject(appState) }
+        .sheet(isPresented: $showDrawSkate) { SkateDrawView(showDrawSkate: true) }
         .fullScreenCover(isPresented: $showSpotsMap) { AllSpotsMapView() }
     }
 }
@@ -174,7 +160,7 @@ struct ProfileCard: View {
             // Avatar
             ZStack {
                 LinearGradient(
-                    colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")],
+                    colors: [Color("verde"), Color("verde")],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
@@ -194,7 +180,7 @@ struct ProfileCard: View {
                 HStack(spacing: 8) {
                     Text(user?.level.rawValue ?? "Amateur")
                         .font(.system(size: 13, weight: .semibold))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                        .foregroundColor(Color("verde"))
                         .padding(.horizontal, 10)
                         .padding(.vertical, 3)
                         .background(Color(hex: "#FFD700").opacity(0.12))
@@ -218,7 +204,7 @@ struct ProfileCard: View {
                 .fill(Color.white.opacity(0.06))
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color(hex: "#FFD700").opacity(0.15), lineWidth: 1)
+                        .stroke(Color("verde").opacity(0.15), lineWidth: 1)
                 )
         )
     }
@@ -276,7 +262,7 @@ struct ToggleRow: View {
             Spacer()
             
             Toggle("", isOn: $isOn)
-                .tint(Color(hex: "#FFD700"))
+                .tint(Color("verde"))
                 .labelsHidden()
         }
         .padding(.horizontal, 16)
@@ -330,7 +316,7 @@ struct AboutView: View {
                 VStack(spacing: 24) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 24)
-                            .fill(LinearGradient(colors: [Color(hex: "#FFD700"), Color(hex: "#FF8C00")], startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .fill(LinearGradient(colors: [Color("verde"), Color("verde")], startPoint: .topLeading, endPoint: .bottomTrailing))
                             .frame(width: 80, height: 80)
                         Image("AppIcon")
                             .font(.system(size: 26, weight: .black, design: .rounded))
@@ -362,7 +348,7 @@ struct AboutView: View {
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") { dismiss() }.foregroundColor(Color(hex: "#FFD700"))
+                    Button("Done") { dismiss() }.foregroundColor(Color("verde"))
                 }
             }
         }
@@ -408,10 +394,12 @@ struct PrivacyView: View {
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") { dismiss() }.foregroundColor(Color(hex: "#FFD700"))
+                    Button("Done") { dismiss() }.foregroundColor(Color("verde"))
                 }
             }
         }
         .preferredColorScheme(.dark)
     }
 }
+
+
