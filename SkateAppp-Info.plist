@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Street Skate</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array>
+		<string>MKDirectionsModeWalking</string>
+		<string>MKDirectionsModeCar</string>
+	</array>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>we need it </string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>O Street Skate lê seus dados de atividade para exibir métricas de saúde junto das sessões de skate.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>O Street Skate salva seus treinos de skate no Apple Health para acompanhar seu progresso.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>O Street Skate precisa acessar sua localização em segundo plano para registrar seu trajeto enquanto a tela está bloqueada.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>O Street Skate precisa acessar sua localização em segundo plano para registrar seu trajeto enquanto a tela está bloqueada.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>O Street Skate usa sua localização para registrar seu trajeto durante a sessão.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>O Street Skate usa sensores de movimento para contar remadas e detectar sua atividade durante a sessão.</string>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
+	<key>NSSupportsLiveActivitiesFrequentUpdates</key>
+	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>
